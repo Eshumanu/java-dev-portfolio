@@ -3,9 +3,14 @@ import { useRef } from "react";
 
 const timeline = [
   {
+
     period: "2023 — 2027",
     title: "Bachelor of Technology — Computer Science",
     subtitle: "St.Marys Engineering College",
+
+    period: "2020 — 2024",
+    title: "Bachelor of Technology — Computer Science",
+    subtitle: "Your University Name",
     description: "Data Structures, Algorithms, OOP, Database Management, Software Engineering, Web Technologies.",
   },
   {

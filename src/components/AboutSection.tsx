@@ -1,6 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+
 import profileImg from "@/assets/profile.jpeg";
+
+import profileImg from "@/assets/profile.png";
+
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -21,13 +25,17 @@ const AboutSection = () => {
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">01</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-8">About</h2>
 
+
             <div className="w-56 h-72 rounded-2xl overflow-hidden border border-border">
-              <img
-                src={profileImg}
-                alt="Eshwer Gujja"
-                className="w-full h-full object-cover"
-              />
-            </div>
+
+              <div className="w-48 h-48 rounded-2xl overflow-hidden border border-border">
+
+                <img
+                  src={profileImg}
+                  alt="Eshwer Gujja"
+                  className="w-full h-full object-cover"
+                />
+              </div>
           </motion.div>
 
           <motion.div
@@ -37,7 +45,20 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Heyy Hi! i am Eshwer a <span className="text-foreground">Full Stack Java Developer</span> with
+
+              Heyy Hi! i am Eshwer a < span className="text-foreground" > Full Stack Java Developer</span > with
+              strong fundamentals in Java and Spring Boot.I have hands - on experience building REST APIs
+              and microservices - based applications.
+            </p >
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I am eager to learn, grow, and contribute to real-world software projects.
+              My goal is to write clean, maintainable code and build applications that
+              make a real difference.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I thrive in collaborative environments and enjoy solving
+
+              I am a motivated <span className="text-foreground">Full Stack Java Developer</span> with
               strong fundamentals in Java and Spring Boot. I have hands-on experience building REST APIs
               and microservices-based applications.
             </p>
@@ -48,12 +69,13 @@ const AboutSection = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I thrive in collaborative environments and enjoy solving
+
               complex problems with elegant, well-architected solutions.
             </p>
-          </motion.div>
-        </div>
-      </div>
-    </section>
+          </motion.div >
+        </div >
+      </div >
+    </section >
   );
 };
 

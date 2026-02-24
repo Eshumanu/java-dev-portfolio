@@ -11,7 +11,10 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8"
         >
+
           {/* Full Stack Java Developer */}
+
+          Full Stack Java Developer
         </motion.p>
 
         <motion.h1
@@ -22,8 +25,12 @@ const HeroSection = () => {
         >
           Eshwer
           <br />
+
           {/* Gujja */}
-        </motion.h1>
+
+          Gujja
+
+        </motion.h1 >
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -31,9 +38,12 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-muted-foreground max-w-md mx-auto text-base leading-relaxed mb-12"
         >
+
+
           Building robust, scalable applications with Spring Boot,
+
           Microservices, and modern frontend technologies.
-        </motion.p>
+        </motion.p >
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -69,8 +79,8 @@ const HeroSection = () => {
             <ArrowDown size={18} />
           </motion.div>
         </motion.a>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 
