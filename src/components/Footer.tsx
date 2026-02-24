@@ -1,7 +1,8 @@
 const Footer = () => (
-  <footer className="section-padding py-8 border-t border-border text-center">
-    <p className="text-sm text-muted-foreground font-mono">
-      Designed & Built by <span className="text-primary">John Doe</span>
+  <footer className="section-padding py-10 text-center">
+    <div className="section-divider mb-10" />
+    <p className="text-xs tracking-widest uppercase text-muted-foreground">
+      © 2024 John Doe — Built with passion
     </p>
   </footer>
 );

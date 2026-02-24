@@ -1,27 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Server, Globe, Database, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Backend",
-    icon: Server,
     skills: ["Java", "Spring Boot", "REST APIs", "Microservices", "Hibernate", "JPA"],
   },
   {
     title: "Frontend",
-    icon: Globe,
-    skills: ["HTML", "CSS", "JavaScript", "React (Basic–Intermediate)"],
+    skills: ["HTML", "CSS", "JavaScript", "React"],
   },
   {
     title: "Database",
-    icon: Database,
     skills: ["MySQL", "PostgreSQL"],
   },
   {
     title: "Tools",
-    icon: Wrench,
-    skills: ["Git & GitHub", "Maven", "Postman", "Docker (Basic)"],
+    skills: ["Git & GitHub", "Maven", "Postman", "Docker"],
   },
 ];
 
@@ -30,43 +25,42 @@ const SkillsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="section-padding section-spacing bg-secondary/30">
-      <div className="max-w-6xl mx-auto" ref={ref}>
+    <section id="skills" className="section-padding section-spacing">
+      <div className="max-w-7xl mx-auto" ref={ref}>
+        <div className="section-divider mb-16" />
+
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <h2 className="text-3xl font-bold mb-2">
-            <span className="text-primary font-mono text-lg font-normal mr-2">02.</span>
-            Skills
-          </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mb-10" />
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">02</p>
+          <h2 className="text-3xl md:text-4xl font-bold">Skills</h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden">
           {skillCategories.map((cat, i) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all hover:shadow-lg group"
+              className="bg-background p-8 hover:bg-card transition-colors duration-300 group"
             >
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
-                <cat.icon size={20} className="text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-4">{cat.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6 group-hover:text-foreground transition-colors duration-300">
+                {cat.title}
+              </h3>
+              <ul className="space-y-3">
                 {cat.skills.map((skill) => (
-                  <span
+                  <li
                     key={skill}
-                    className="text-xs font-mono px-2.5 py-1 rounded-full bg-accent text-accent-foreground"
+                    className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300"
                   >
                     {skill}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>

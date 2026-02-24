@@ -1,83 +1,74 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center section-padding relative overflow-hidden">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)",
-        backgroundSize: "40px 40px",
-      }} />
-
-      <div className="max-w-6xl mx-auto w-full relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+    <section className="min-h-screen flex items-center justify-center section-padding relative">
+      <div className="max-w-7xl mx-auto w-full text-center">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8"
         >
-          <p className="text-primary font-mono text-sm mb-4">Hi, my name is</p>
-        </motion.div>
+          Full Stack Java Developer
+        </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] mb-8"
         >
-          <span className="text-foreground">John Doe.</span>
+          John
+          <br />
+          Doe
         </motion.h1>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-3xl sm:text-4xl md:text-6xl font-bold text-muted-foreground mb-6"
-        >
-          I build things for the web.
-        </motion.h2>
-
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-muted-foreground max-w-xl text-lg mb-10 leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-muted-foreground max-w-md mx-auto text-base leading-relaxed mb-12"
         >
-          Full Stack Java Developer passionate about building robust, scalable
-          applications with <span className="text-primary">Spring Boot</span>,{" "}
-          <span className="text-primary">Microservices</span>, and modern
-          frontend technologies.
+          Building robust, scalable applications with Spring Boot, 
+          Microservices, and modern frontend technologies.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex items-center gap-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex items-center justify-center gap-6"
         >
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-          >
-            View My Work
-            <ArrowDown size={16} />
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300">
+            <Github size={16} />
           </a>
-
-          <div className="flex items-center gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="mailto:john@example.com"
-              className="text-muted-foreground hover:text-primary transition-colors">
-              <Mail size={20} />
-            </a>
-          </div>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300">
+            <Linkedin size={16} />
+          </a>
+          <a href="mailto:john@example.com"
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300">
+            <Mail size={16} />
+          </a>
         </motion.div>
+
+        <motion.a
+          href="#about"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          >
+            <ArrowDown size={18} />
+          </motion.div>
+        </motion.a>
       </div>
     </section>
   );
