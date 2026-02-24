@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Send, Github, Linkedin, Mail } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -9,112 +9,80 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — wire up with backend later
-    alert("Message sent! (This is a placeholder — connect to a backend service.)");
+    alert("Message sent! (Connect to a backend service to make this work.)");
     setForm({ name: "", email: "", message: "" });
   };
 
   return (
     <section id="contact" className="section-padding section-spacing">
-      <div className="max-w-6xl mx-auto" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <p className="text-primary font-mono text-sm mb-2">05. What's Next?</p>
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            I'm currently looking for new opportunities. Whether you have a question
-            or just want to say hi, my inbox is always open!
-          </p>
-        </motion.div>
+      <div className="max-w-7xl mx-auto" ref={ref}>
+        <div className="section-divider mb-16" />
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {/* Contact Info */}
+        <div className="grid md:grid-cols-12 gap-12 md:gap-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-6"
+            className="md:col-span-4"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <Mail size={18} className="text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Email</p>
-                <p className="text-foreground">john.doe@example.com</p>
-              </div>
-            </div>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">05</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Contact</h2>
 
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <MapPin size={18} className="text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Location</p>
-                <p className="text-foreground">India</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 pt-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Github size={18} />
+            <div className="space-y-5">
+              <a href="mailto:john.doe@example.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Mail size={16} />
+                john.doe@example.com
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Linkedin size={18} />
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Github size={16} />
+                github.com/johndoe
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Linkedin size={16} />
+                linkedin.com/in/johndoe
               </a>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
+            className="md:col-span-8 space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div>
+            <div className="grid sm:grid-cols-2 gap-6">
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Name"
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/40 transition-colors text-sm"
               />
-            </div>
-            <div>
               <input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Email"
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/40 transition-colors text-sm"
               />
             </div>
-            <div>
-              <textarea
-                placeholder="Your Message"
-                rows={5}
-                required
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow resize-none"
-              />
-            </div>
+            <textarea
+              placeholder="Message"
+              rows={5}
+              required
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/40 transition-colors resize-none text-sm"
+            />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-sm text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
             >
               Send Message
-              <Send size={16} />
+              <Send size={14} />
             </button>
           </motion.form>
         </div>
