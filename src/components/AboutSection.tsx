@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import profileImg from "@/assets/profile.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -18,7 +19,15 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">01</p>
-            <h2 className="text-3xl md:text-4xl font-bold">About</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">About</h2>
+
+            <div className="w-48 h-48 rounded-2xl overflow-hidden border border-border">
+              <img
+                src={profileImg}
+                alt="Eshwer Gujja"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </motion.div>
 
           <motion.div

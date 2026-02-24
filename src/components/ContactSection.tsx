@@ -29,17 +29,17 @@ const ContactSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Contact</h2>
 
             <div className="space-y-5">
-              <a href="mailto:john.doe@example.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+              <a href="mailto:eshwer@example.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
                 <Mail size={16} />
-                john.doe@example.com
+                eshwer@example.com
               </a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
                 <Github size={16} />
-                github.com/johndoe
+                github.com/eshwergujja
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
                 <Linkedin size={16} />
-                linkedin.com/in/johndoe
+                linkedin.com/in/eshwergujja
               </a>
             </div>
           </motion.div>

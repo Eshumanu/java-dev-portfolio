@@ -20,9 +20,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] mb-8"
         >
-          John
+          Eshwer
           <br />
-          Doe
+          Gujja
         </motion.h1>
 
         <motion.p

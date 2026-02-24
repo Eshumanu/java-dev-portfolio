@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 section-padding">
         <a href="#" className="text-sm font-medium tracking-wide text-foreground">
-          John Doe
+          Eshwer Gujja
         </a>
 
         {/* Desktop */}
